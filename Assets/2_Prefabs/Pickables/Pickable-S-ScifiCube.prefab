@@ -10,12 +10,27 @@ PrefabInstance:
     - target: {fileID: 5428883347186807129, guid: edf276f68fee64ed7a70fdf4a6159070,
         type: 3}
       propertyPath: m_Name
-      value: PickableBox
+      value: Pickable-ScifiCube
       objectReference: {fileID: 0}
     - target: {fileID: 5428883347186807138, guid: edf276f68fee64ed7a70fdf4a6159070,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428883347186807138, guid: edf276f68fee64ed7a70fdf4a6159070,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428883347186807138, guid: edf276f68fee64ed7a70fdf4a6159070,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428883347186807138, guid: edf276f68fee64ed7a70fdf4a6159070,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5428883347186807138, guid: edf276f68fee64ed7a70fdf4a6159070,
         type: 3}

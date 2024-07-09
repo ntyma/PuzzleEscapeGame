@@ -16,18 +16,17 @@ public class Pickable : MonoBehaviour, IInteractable
 
     public void OnHoverEnter()
     {
-        Debug.Log("Hover Enter");
+        
     }
 
     public void OnHoverExit()
     {
-        Debug.Log("Hover Exit");
+        
     }
 
     public void OnInteract(InteractModule player)
     {
-        //PickUp();
-        Debug.Log("Attempting pickup");
+        //Debug.Log("Attempting pickup");
 
         //Pickable is not being held
         if(transform.parent == null)
@@ -42,7 +41,7 @@ public class Pickable : MonoBehaviour, IInteractable
 
             IndicatePickedUp();
             
-            Debug.Log("Picking up box");
+            //Debug.Log("Picking up box");
         }
         else //picakble is being held
         {

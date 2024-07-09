@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DoorSensor : MonoBehaviour
 {
-    [SerializeField] DoorControl doorControl;
-    private KeyNames keyName;
+    [SerializeField] Door door;
+    [SerializeField] private KeyNames keyName;
 
     private void Awake()
     {
-        keyName = doorControl.GetDoorKeyName();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +20,7 @@ public class DoorSensor : MonoBehaviour
             {
                 if (other.gameObject.GetComponent<Key>().GetPickedUpStatus())
                 {
-                    doorControl.OpenDoor();
+                    door.OpenDoor();
                 }
             }
         }
@@ -28,6 +28,6 @@ public class DoorSensor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        doorControl.CloseDoor();
+        door.CloseDoor();
     }
 }

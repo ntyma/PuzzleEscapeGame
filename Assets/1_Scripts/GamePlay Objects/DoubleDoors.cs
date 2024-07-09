@@ -7,15 +7,11 @@ public class DoubleDoors : Door
     [SerializeField] private GameObject leftDoor;
     [SerializeField] private GameObject rightDoor;
     [SerializeField] private float doorLength;
-    [SerializeField] private float openingSpeed;
 
     [SerializeField] private Vector3 leftOriginalPosition;
     [SerializeField] private Vector3 rightOriginalPosition;
     [SerializeField] private Vector3 leftOpenPosition;
     [SerializeField] private Vector3 rightOpenPosition;
-
-    private bool isOpen = false;
-
 
 
     public void Start()
@@ -39,8 +35,4 @@ public class DoubleDoors : Door
         }
     }
 
-    public override void OpenDoor()
-    {
-        isOpen = true;
-    }
 }

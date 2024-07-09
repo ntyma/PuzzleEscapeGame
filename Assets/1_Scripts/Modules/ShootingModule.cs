@@ -10,6 +10,7 @@ public class ShootingModule : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private Rigidbody projectile;
     [SerializeField] private Transform shootingPoint;
+    [SerializeField] private float forceFactor;
 
     public void Shoot()
     {
@@ -24,7 +25,7 @@ public class ShootingModule : MonoBehaviour
         bulletInstantiated.rotation = shootingPoint.rotation;
 
         //TODO: for projectiles need to add foremode.impuls for realistic shooting
-        bulletInstantiated.AddForce(10f * shootingPoint.forward, ForceMode.Impulse);
+        bulletInstantiated.AddForce(forceFactor * shootingPoint.forward, ForceMode.Impulse);
         Destroy(bulletInstantiated.gameObject, 5f);
 
         tempPool.ResetBackToPool(5f);
