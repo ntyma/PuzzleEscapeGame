@@ -16,6 +16,9 @@ public class SingleDoor : Door
     // Update is called once per frame
     void Update()
     {
-        door.position = Vector3.Lerp(door.position, openPoint.position, openingSpeed * Time.deltaTime);
+        if (isOpen)
+        {
+            door.position = Vector3.Lerp(door.position, openPoint.position, openingSpeed * Time.deltaTime);
+        }
     }
 }

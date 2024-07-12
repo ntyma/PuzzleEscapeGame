@@ -7,10 +7,6 @@ public class DoorSensor : MonoBehaviour
     [SerializeField] Door door;
     [SerializeField] private KeyNames keyName;
 
-    private void Awake()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
