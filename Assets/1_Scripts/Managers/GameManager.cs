@@ -7,8 +7,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager singleton{get; private set;}
-
-    private InputController player;
+    [SerializeField] private InputController player;
 
     public UnityEvent OnUnityLevelStart = new UnityEvent();
     public Action OnActionLevelStart;

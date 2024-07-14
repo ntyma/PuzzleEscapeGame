@@ -8,11 +8,6 @@ public class Sensor : MonoBehaviour
     public Action OnPlayerEnter;
     public Action OnPlayerExit;
 
-    private void Awake()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))

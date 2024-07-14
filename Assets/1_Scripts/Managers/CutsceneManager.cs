@@ -6,25 +6,39 @@ using UnityEngine.Playables;
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] private PlayableDirector director;
+    [SerializeField] private Sensor room2Sensor;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.singleton.OnUnityLevelStart.AddListener(StartCutscene);
-        GameManager.singleton.OnActionLevelStart += StartCutscene;
-
-
+        //GameManager.singleton.OnUnityLevelStart.AddListener(StartCutscene);
+        //GameManager.singleton.OnActionLevelStart += StartCutscene;
+        room2Sensor.OnPlayerEnter += StartCutscene;
+        room2Sensor.OnPlayerExit -= ExitTrigger;
     }
  
     private void StartCutscene()
     {
-        director.Play();
+        Debug.Log("activate cut scene");
+        GameManager.singleton.LockPlayerInput();
+        
+        director.gameObject.SetActive(true);
+        //director.Play();
     }
 
-    private void OnCutsceneEnd()
+    public void OnCutsceneEnd()
     {
-        GameManager.singleton.OnUnityLevelStart.RemoveListener(StartCutscene);
-        GameManager.singleton.OnActionLevelStart -= StartCutscene;
+        //GameManager.singleton.OnUnityLevelStart.RemoveListener(StartCutscene);
+        //GameManager.singleton.OnActionLevelStart -= StartCutscene;
+
+        director.gameObject.SetActive(false);
+        GameManager.singleton.UnlockPlayerInput();
+    }
+
+    private void ExitTrigger()
+    {
+        room2Sensor.OnPlayerEnter -= StartCutscene;
+        room2Sensor.OnPlayerExit -= ExitTrigger;
     }
 }
 
