@@ -23,14 +23,12 @@ public class CutsceneManager : MonoBehaviour
         GameManager.singleton.LockPlayerInput();
         
         director.gameObject.SetActive(true);
-        //director.Play();
     }
 
     public void OnCutsceneEnd()
     {
         //GameManager.singleton.OnUnityLevelStart.RemoveListener(StartCutscene);
         //GameManager.singleton.OnActionLevelStart -= StartCutscene;
-
         director.gameObject.SetActive(false);
         GameManager.singleton.UnlockPlayerInput();
     }
