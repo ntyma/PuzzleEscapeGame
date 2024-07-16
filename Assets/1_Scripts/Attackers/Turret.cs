@@ -28,12 +28,8 @@ public class Turret : MonoBehaviour
         lineRenderer.SetPosition(0, aim.position);
         sensor.OnPlayerEnter += SetPlayerInRange;
         sensor.OnPlayerExit += SetPlayerOutOfRange;
+        player = FindAnyObjectByType<Player>();
         HideRay();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
     }
 
     // Update is called once per frame
@@ -60,7 +56,7 @@ public class Turret : MonoBehaviour
             DrawRay(rayTarget.point);
             //playerHealth = rayTarget.collider.GetComponent<HealthModule>();
             //playerHealth.DeductHealth(1);
-            player = rayTarget.collider.GetComponent<Player>();
+            //player = rayTarget.collider.GetComponent<Player>();
 
             timer += Time.deltaTime;
             if(timer >= attackCooldown)
