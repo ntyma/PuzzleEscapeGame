@@ -14,13 +14,13 @@ public class PatrolState : AIState
     public override void OnStateEnter()
     {
         //agent.SetDestination(Vector3.right * 10);
-        Debug.Log("patrol enter");
+        //Debug.Log("patrol enter");
         controller.GetAgent().SetDestination(controller.GetPath()[waypointIndex].position);
     }
 
     public override void OnStateExit()
     {
-        Debug.Log("patrol exut");
+        //Debug.Log("patrol exut");
     }
 
     public override void OnStateRun()

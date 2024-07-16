@@ -27,7 +27,7 @@ public class HealthModule: MonoBehaviour
         
         if(currentHealth <= 0)
         {
-            //OnDie.Invoke();
+            OnDie.Invoke();
         }
     }
 }

@@ -62,15 +62,13 @@ public class Turret : MonoBehaviour
             //playerHealth.DeductHealth(1);
             player = rayTarget.collider.GetComponent<Player>();
 
-            
             timer += Time.deltaTime;
             if(timer >= attackCooldown)
             {
                 player.ReceiveDamage(1);
                 timer = 0;
             }
-
-            
+   
         }
         else
         {

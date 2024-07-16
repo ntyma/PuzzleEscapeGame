@@ -7,7 +7,8 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager singleton{get; private set;}
-    private InputController player;
+    private InputController playerControll;
+    private Player player;
     [SerializeField] private LevelLoader levelLoader;
     [SerializeField] private GameStatus gameStatus;
 
@@ -38,7 +39,9 @@ public class GameManager : MonoBehaviour
     //Needs to be called at every scene transition
     public void StartLevel()
     {
-        player = FindObjectOfType<InputController>();
+        playerControll = FindObjectOfType<InputController>();
+        player = FindAnyObjectByType<Player>();
+        player.OnPlayerDeath += PlayerDied;
         UnlockPlayerInput();
         //OnUnityLevelStart?.Invoke();
         OnActionLevelStart?.Invoke();
@@ -69,11 +72,11 @@ public class GameManager : MonoBehaviour
 
     public void LockPlayerInput()
     {
-        player.enabled = false;
+        playerControll.enabled = false;
     }
 
     public void UnlockPlayerInput()
     {
-        player.enabled = true;
+        playerControll.enabled = true;
     }
 }

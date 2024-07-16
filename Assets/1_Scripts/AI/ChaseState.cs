@@ -5,30 +5,26 @@ using UnityEngine;
 public class ChaseState : AIState
 {
     private Transform targetToChase;
+    private float originalSpeed;
 
     public ChaseState(AIController contr, Transform target) : base(contr)
     {
+        targetToChase = target;
     }
 
     public override void OnStateEnter()
     {
-
-        Debug.Log("chase enter");
+        originalSpeed = controller.GetAgent().speed;
+        controller.GetAgent().speed = originalSpeed * 2.5f;
     }
 
     public override void OnStateExit()
     {
-        Debug.Log("chase exit");
+        controller.GetAgent().speed = originalSpeed;
     }
 
     public override void OnStateRun()
     {
-        Debug.Log("chase is happening");
         controller.GetAgent().SetDestination(targetToChase.position);
-        if (controller.GetAgent().remainingDistance <= controller.GetAgent().stoppingDistance)
-        {
-
-        }
-
     }
 }

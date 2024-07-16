@@ -19,7 +19,6 @@ public class CutsceneManager : MonoBehaviour
  
     private void StartCutscene()
     {
-        Debug.Log("activate cut scene");
         GameManager.singleton.LockPlayerInput();
         
         director.gameObject.SetActive(true);
