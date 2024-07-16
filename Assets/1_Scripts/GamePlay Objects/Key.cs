@@ -23,12 +23,12 @@ public class Key : Pickable
     protected override void IndicatePickedUp()
     {
         base.IndicatePickedUp();
-        //OnPickedUp.Invoke();
+        OnPickedUp.Invoke();
     }
 
     protected override void IndicateDropped()
     {
         base.IndicateDropped();
-        //OnDropped.Invoke();
+        OnDropped.Invoke();
     }
 }
