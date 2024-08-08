@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class KeyBox : MonoBehaviour
 {
@@ -16,9 +14,6 @@ public class KeyBox : MonoBehaviour
 
     [SerializeField] private Material normalMaterial;
     [SerializeField] private Material highlightMaterial;
-
-    //[SerializeField] private UnityEvent OnActivation;
-    //[SerializeField] private UnityEvent OnDeActivation;
 
     private void Start()
     {

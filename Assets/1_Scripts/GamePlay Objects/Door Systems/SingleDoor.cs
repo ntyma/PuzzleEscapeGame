@@ -7,7 +7,6 @@ public class SingleDoor : Door
     [SerializeField] private Transform door;
     [SerializeField] private Transform openPoint;
 
-    // Update is called once per frame
     void Update()
     {
         if (isOpen)

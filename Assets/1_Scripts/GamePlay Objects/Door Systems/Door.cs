@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private KeyNames keyName;
     [SerializeField] protected float openingSpeed;
     protected bool isOpen = false;
-    // Start is called before the first frame update
+    [SerializeField] private AudioSource audioPlayer;
 
     public virtual void OpenDoor()
     {
         isOpen = true;
+        PlayAudio();
     }
 
     public virtual void CloseDoor()
     {
         isOpen = false;
+        PlayAudio();
     }
 
-    public KeyNames GetDoorKeyName()
+    private void PlayAudio()
     {
-        return keyName;
+        if (audioPlayer != null)
+        {
+            audioPlayer.Play();
+        }
     }
 }
