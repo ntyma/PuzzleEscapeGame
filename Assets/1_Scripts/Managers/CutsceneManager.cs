@@ -14,13 +14,12 @@ public class CutsceneManager : MonoBehaviour
         //GameManager.singleton.OnUnityLevelStart.AddListener(StartCutscene);
         //GameManager.singleton.OnActionLevelStart += StartCutscene;
         room2Sensor.OnPlayerEnter += StartCutscene;
-        room2Sensor.OnPlayerExit -= ExitTrigger;
+        room2Sensor.OnPlayerExit += ExitTrigger;
     }
  
     private void StartCutscene()
     {
         GameManager.singleton.LockPlayerInput();
-        
         director.gameObject.SetActive(true);
     }
 

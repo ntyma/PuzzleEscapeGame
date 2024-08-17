@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
         StartLevel();
         ExitSensor.OnPlayerEnter += FinishLevel;
+        ExitSensor.OnPlayerExit += Placeholder;
     }
 
     //Needs to be called at every scene transition
@@ -54,6 +55,10 @@ public class GameManager : MonoBehaviour
         gameStatus.SetPlayerCompleted();
         LockPlayerInput();
         levelLoader.LoadEndScene();
+    }
+
+    private void Placeholder(){
+        return;
     }
 
     public void PlayerDied()
